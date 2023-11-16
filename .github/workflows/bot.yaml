@@ -4,8 +4,8 @@ jobs:
   HackathonBot-Test:
     runs-on: ubuntu-latest
     env:
-      ISSUSE_TOKEN: ${{ ISSUSE_TOKEN.ISSUSE_TOKEN }}
-      COMMENT_TOKEN: ${{ ISSUSE_TOKEN.COMMENT_TOKEN }}
+      ISSUSE_TOKEN: ${{ vars.ISSUSE_TOKEN }}
+      COMMENT_TOKEN: ${{ vars.COMMENT_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
