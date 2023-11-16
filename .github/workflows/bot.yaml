@@ -11,7 +11,7 @@ jobs:
       - run: pip install requests schedule
       - name: set environment variable
         run: |
-          echo ${{ ISSUSE_TOKEN }}
+          echo "Hello World"
           export ISSUSE_TOKEN=${{ ISSUSE_TOKEN.ISSUSE_TOKEN }}
           export COMMENT_TOKEN=${{ ISSUSE_TOKEN.COMMENT_TOKEN }}
           echo $ISSUSE_TOKEN
