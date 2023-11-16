@@ -1,10 +1,10 @@
 name: HackathonBot-Test
-on: [push, pull_request]
+on: [push]
 jobs:
   HackathonBot-Test:
     runs-on: ubuntu-latest
     env:
-      ISSUSE_TOKEN: ${{ vars.ISSUSE_TOKEN }}
+      ISSUE_TOKEN: ${{ vars.ISSUE_TOKEN }}
       COMMENT_TOKEN: ${{ vars.COMMENT_TOKEN }}
     steps:
       - uses: actions/checkout@v3
@@ -12,51 +12,14 @@ jobs:
         with:
           python-version: 3.8
       - run: pip install requests schedule
-      - run: echo "Hello World"
-      - run: echo $ISSUSE_TOKEN
+      - run: echo $ISSUE_TOKEN
       - run: echo $COMMENT_TOKEN
-      - run: echo ${{ vars.test }}
-      # - name: set environment variable
-      #   run: |
-      #     echo "Hello World"
-      #     export ISSUSE_TOKEN=${{ ISSUSE_TOKEN.ISSUSE_TOKEN }}
-      #     export COMMENT_TOKEN=${{ ISSUSE_TOKEN.COMMENT_TOKEN }}
-      #     echo $ISSUSE_TOKEN
-      #     echo $COMMENT_TOKEN
-      # #     export HTTP_PROXY=${{  }}
-      # #     export HTTPS_PROXY=${{  }}
-      # - name: exec bot
-      #   run: |
-      #     cd HackathonBot
-      #     python3 bot.py
+      - run: echo ${{ env.test }}
+      - name: exec bot
+        run: |
+          cd HackathonBot
+          python3 bot.py
 
-# name: Test
-
-# on: [push, pull_request]
-
-# jobs:
-#   Test:
-#     name: Test
-#     runs-on: ubuntu-20.04
-#     steps:
-#       - uses: actions/checkout@v3
-#       - uses: actions/setup-python@v4
-#         with:
-#           python-version: 3.8
-#       - run: pip install requests schedule
-#       - name: set environment variable
-#         run: |
-#           echo ${{ ISSUSE_TOKEN }}
-#           export ISSUSE_TOKEN=${{ ISSUSE_TOKEN.ISSUSE_TOKEN }}
-#           export COMMENT_TOKEN=${{ ISSUSE_TOKEN.COMMENT_TOKEN }}
-#           echo $ISSUSE_TOKEN
-#           echo $COMMENT_TOKEN
-#       #     export HTTP_PROXY=${{  }}
-#       #     export HTTPS_PROXY=${{  }}
-#       - name: exec bot
-#         run: |
-#           cd HackathonBot
-#           python3 bot.py
   # Pytorch2PaddleDocsTools-build:
   #   name: ${{ matrix.friendlyName }} ${{ matrix.arch }}
   #   runs-on: ${{ matrix.os }}
