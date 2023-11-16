@@ -13,8 +13,8 @@ jobs:
           python-version: 3.8
       - run: pip install requests schedule
       - run: echo "Hello World"
-      - run: echo ISSUSE_TOKEN
-      - run: echo COMMENT_TOKEN
+      - run: echo $ISSUSE_TOKEN
+      - run: echo $COMMENT_TOKEN
       # - name: set environment variable
       #   run: |
       #     echo "Hello World"
