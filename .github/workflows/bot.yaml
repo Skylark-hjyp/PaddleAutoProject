@@ -3,6 +3,9 @@ on: [push, pull_request]
 jobs:
   HackathonBot-Test:
     runs-on: ubuntu-latest
+    env:
+      ISSUSE_TOKEN: ${{ ISSUSE_TOKEN.ISSUSE_TOKEN }}
+      COMMENT_TOKEN: ${{ ISSUSE_TOKEN.COMMENT_TOKEN }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
@@ -10,6 +13,7 @@ jobs:
           python-version: 3.8
       - run: pip install requests schedule
       - run: echo "Hello World"
+      - run: echo ${ISSUSE_TOKEN}
       # - name: set environment variable
       #   run: |
       #     echo "Hello World"
