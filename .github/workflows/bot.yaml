@@ -4,14 +4,14 @@ on:
   push:
     paths:
       - 'HackathonBot/**'
-  pull_request:
-    paths:
-      - 'HackathonBot/**'
 
 jobs:
   HackathonBot-build:
     name: ${{ matrix.friendlyName }} ${{ matrix.arch }}
     runs-on: ${{ matrix.os }}
+    env:
+      ISSUSE_TOKEN: ${{ vars.ISSUSE_TOKEN }}
+      COMMENT_TOKEN: ${{ vars.COMMENT_TOKEN }}
     strategy:
       fail-fast: false
       matrix:
@@ -33,8 +33,6 @@ jobs:
           python-version: ${{ matrix.PythonVersion }}
       - name: set environment variable
         run: |
-          export ISSUSE_TOKEN=${{ ISSUSE_TOKEN }}
-          export COMMENT_TOKEN=${{ COMMENT_TOKEN }}
           echo $ISSUSE_TOKEN
           echo $COMMENT_TOKEN
       - run: pip install requests schedule pyinstaller
