@@ -20,6 +20,7 @@ def update_issue_automatically():
             # 1. 获取issue表格
             response = utils.request_get_issue(issue_url, config=config)
 
+            print("====log====")
             print(str(response))
 
             # 从issue中提取题目列表
