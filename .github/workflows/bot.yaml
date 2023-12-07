@@ -5,6 +5,7 @@ on:
     paths:
       - 'HackathonBot/**'
 
+jobs:
   HackathonBot-build:
     name: ${{ matrix.friendlyName }} ${{ matrix.arch }}
     runs-on: ${{ matrix.os }}
