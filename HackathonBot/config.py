@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*--
+# -*- coding: utf-8 -*-
 import logging
 import os
 
@@ -6,6 +6,7 @@ common_config = {
 
     # 更新issue的token
     'issue_token': os.environ.get('ISSUE_TOKEN'),
+
 
     # 更新评论的token
     'comment_token': os.environ.get('COMMENT_TOKEN'),
