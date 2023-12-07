@@ -256,7 +256,10 @@ def get_logger():
     logger.setLevel(level=logging.DEBUG)
 
     formatter = logging.Formatter('%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s')
-
+    
+    if not os.path.exists('./logs'):
+        os.makedirs('./logs')
+    
     file_handler = logging.FileHandler('./logs/output.txt', encoding='utf-8')
     file_handler.setLevel(level=logging.INFO)
     file_handler.setFormatter(formatter)
