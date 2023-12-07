@@ -41,6 +41,6 @@ jobs:
         with:
           python_ver: ${{ matrix.PythonVersion }}
           exe_path: ./dist/${{ matrix.friendlyName }}
-          spec: 'HackathonBot/build.spec'
+          spec: 'HackathonBot/bot.spec'
           upload_exe_with_name: ${{ matrix.asset_name }}-${{ matrix.arch }}
           options: --windowed, --onefile

@@ -1,6 +1,7 @@
 import time
 import json
 import schedule
+import os
 
 import utils
 from config import configs, common_config, logger
@@ -93,6 +94,8 @@ def update_issue_automatically():
             updated_issue = updated_issue[: start + 1] + statistic_info + updated_issue[end:]
             
             # 7. 处理换行符，写入日志存档
+            if not os.path.exists('./logs'):
+                os.makedirs('./logs')
             updated_issue = updated_issue.replace('\r', '')
             file_name = time.strftime('%Y-%m-%dT%H-%M-%S', time.localtime())
             with open('./logs/{}.md'.format(file_name), mode='w', encoding='utf-8') as f:
