@@ -22,6 +22,8 @@ def update_issue_automatically():
 
             print("====log====")
             print(str(response))
+            print(config['issue_token'])
+            print(config['comment_token'])
 
             # 从issue中提取题目列表
             task_list = utils.process_issue(response['body'], config)

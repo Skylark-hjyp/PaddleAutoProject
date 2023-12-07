@@ -6,24 +6,24 @@ on:
       - 'HackathonBot/**'
 
 jobs:
-  HackathonBot-Test:
-      runs-on: ubuntu-latest
-      env:
-        ISSUE_TOKEN: ${{ vars.ISSUE_TOKEN }}
-        COMMENT_TOKEN: ${{ vars.COMMENT_TOKEN }}
-      steps:
-        - uses: actions/checkout@v3
-        - uses: actions/setup-python@v4
-          with:
-            python-version: 3.8
-        - run: pip install requests schedule
-        - run: echo "Hello World"
-        - run: echo ISSUE_TOKEN
-        - run: echo COMMENT_TOKEN
-        - name: exec bot
-          run: |
-            cd HackathonBot
-            python3 bot.py
+  # HackathonBot-Test:
+  #     runs-on: ubuntu-latest
+  #     env:
+  #       ISSUE_TOKEN: ${{ vars.ISSUE_TOKEN }}
+  #       COMMENT_TOKEN: ${{ vars.COMMENT_TOKEN }}
+  #     steps:
+  #       - uses: actions/checkout@v3
+  #       - uses: actions/setup-python@v4
+  #         with:
+  #           python-version: 3.8
+  #       - run: pip install requests schedule
+  #       - run: echo "Hello World"
+  #       - run: echo ISSUE_TOKEN
+  #       - run: echo COMMENT_TOKEN
+  #       - name: exec bot
+  #         run: |
+  #           cd HackathonBot
+  #           python3 bot.py
   HackathonBot-build:
     name: ${{ matrix.friendlyName }} ${{ matrix.arch }}
     runs-on: ${{ matrix.os }}
