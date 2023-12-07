@@ -4,6 +4,7 @@ import os
 import json
 
 common_config = {
+    
     # 更新issue的token
     'issue_token': os.environ.get('ISSUE_TOKEN'),
 
