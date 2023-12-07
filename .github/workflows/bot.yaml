@@ -1,6 +1,9 @@
 name: Release
 
 on:
+  push:
+    paths:
+      - 'HackathonBot/**'
   pull_request:
     paths:
       - 'HackathonBot/**'
