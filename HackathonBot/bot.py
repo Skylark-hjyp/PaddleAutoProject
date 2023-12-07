@@ -29,7 +29,6 @@ def update_issue_automatically():
             for comment in comments:
                 utils.update_status_by_comment(task_list, comment, config)
                 
-
             # 3. 根据PR更新表格
             # - 根据提出的PR更新状态为已提交
             # - 根据close的PR更新状态为已完成
