@@ -26,210 +26,52 @@ common_config = {
 configs = [
     {
         # 任务名称，起标识作用
-        'issue_name': "【黑客松】",
-
-        # 黑客松开始时间，只会统计黑客松开始时间之后的PR(注意时间中的字母T和Z不能缺少)
-        'start_time' : '2023-09-13T00:28:48Z',
-
-        # 黑客松 issue页面 url 地址, 注意结尾不要有斜杠
-        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/57262',
-        
-        # 监控的仓库列表
-        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls',
-             'https://api.github.com/repos/PaddlePaddle/community/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleScience/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleOCR/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleClas/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleSeg/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleDetection/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleNLP/pulls',
-             'https://api.github.com/repos/PaddlePaddle/Paddle3D/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleMIX/pulls',
-             'https://api.github.com/repos/PaddlePaddle/Paddle2ONNX/pulls',
-             'https://api.github.com/repos/ArmDeveloperEcosystem/Paddle-examples-for-AVH/pulls',
-             'https://api.github.com/repos/openvinotoolkit/openvino/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaddleCustomDevice/pulls',
-             'https://api.github.com/repos/PaddlePaddle/PaConvert/pulls',
-             'https://api.github.com/repos/PaddlePaddle/docs/pulls',
-             'https://api.github.com/repos/InfiniTensor/InfiniTensor/pulls'
-            ],
-
-        # 最大的任务ID
-        'max_task_id' : 122,
-
-        # 忽略不处理的题号，这部分留给人工处理
-        'un_handle_tasks' : [],
-
-        # 已删除的赛题
-        'removed_tasks' : [],
-
-        # 赛道名
-        'type_names' : ["热身赛", "框架 API 开发任务", "框架其他开发任务", "科学计算模型复现", "套件开发任务", "合作伙伴任务"], 
-
-        # 每个赛题所属的赛道，每个赛道是一个数组
-        'task_types' : [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
-                        [12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 110, 114, 115, 116, 117, 118, 119, 120, 121, 122],
-                        [42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 102, 103, 104, 105, 112],
-                        [53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63],
-                        [64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87],
-                        [88, 89, 90, 91, 93, 94, 95, 96, 97, 98, 99, 100, 106, 107, 108, 109, 111, 113]],
-        
-        # 该issue相关PR的前缀，用来标识PR是否属于该issue
-        'pr_prefix' : "Hackathon.*?No",
-        
-        # PR、状态等信息所在的列
-        'pr_col': 4,
-
-        # 如果需要标识完成人，需要写上完成人所在的列
-        'complete_col': 5,
-    }, {
-        # 任务名称，起标识作用
-        'issue_name': "PIR Python API 适配升级",
-
-        # `【黑客松】PIR Python API 适配升级` 任务开始时间，只会统计任务开始时间之后的PR(注意时间中的字母T和Z不能缺少)
-        'start_time' : '2023-10-20T00:00:48Z',
-
-        # 黑客松 issue页面 url 地址, 注意结尾不要有斜杠
-        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/58067',
-        
-        # 监控的仓库列表
-        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls'],
-
-        # 最大的任务ID
-        'max_task_id' : 315,
-
-        # 忽略不处理的题号，这部分留给人工处理
-        'un_handle_tasks' : [68,110],   # 已经手动分配出去了
-
-        # 已删除的赛题
-        'removed_tasks' : [],
-
-        # 赛道名
-        'type_names' : ["PIR Python API 适配升级"], 
-
-        # 每个赛题所属的赛道，每个赛道是一个数组
-        'task_types' : [['1-315']],
-        
-        # 该issue相关PR的前缀，用来标识PR是否属于该issue
-        'pr_prefix' : "PIR API adaptor No.",
-        
-        # PR、状态等信息所在的列
-        'pr_col': 3,
-    },{
-        # 任务名称，起标识作用
-        'issue_name': "[Docathon] 英文文档格式修复（Fix 'System Message'）",
+        'issue_name': "【Docathon】为 Tensor API 文档增加图例",
 
         # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
-        'start_time' : '2023-10-24T00:28:48Z',
+        'start_time': '2024-04-17T00:00:00Z',
 
         # issue页面 url 地址, 注意结尾不要有斜杠
-        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/58237',
-        
-        # 监控的仓库列表
-        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls'],
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/docs/issues/6614',
 
-        # 最大的任务ID
-        'max_task_id' : 28,
-
-        # 忽略不处理的题号，这部分留给人工处理
-        'un_handle_tasks' : [18,21], # 已经手动分配出去了
-
-        # 已删除的赛题
-        'removed_tasks' : [],
-
-        # 赛道名
-        'type_names' : ["Docathon"], 
-
-        # 每个赛题所属的赛道，每个赛道是一个数组
-        'task_types' : [['1-28']],
-
-        # 该issue相关PR的前缀，用来标识PR是否属于该issue
-        'pr_prefix' : "Fix System Message No.",
-
-        # PR、状态等信息所在的列
-        'pr_col': 3,
-        
-    },{
-        # 任务名称，起标识作用
-        'issue_name': "[Docathon] 中文文档 copy-from 清理",
-
-        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
-        'start_time' : '2023-11-08T00:00:00Z',
-
-        # issue页面 url 地址, 注意结尾不要有斜杠
-        'issue_url': 'https://api.github.com/repos/PaddlePaddle/docs/issues/6300',
-        
         # 监控的仓库列表
         'repo_urls': ['https://api.github.com/repos/PaddlePaddle/docs/pulls'],
 
         # 最大的任务ID
-        'max_task_id' : 19,
+        'max_task_id': 60,
 
         # 忽略不处理的题号，这部分留给人工处理
-        'un_handle_tasks' : [], 
+        'un_handle_tasks': [],
 
         # 已删除的赛题
-        'removed_tasks' : [],
+        'removed_tasks': [],
 
         # 赛道名
-        'type_names' : ["Docathon"], 
+        'type_names': ["Docathon"],
 
         # 每个赛题所属的赛道，每个赛道是一个数组
-        'task_types' : [['1-19']],
+        'task_types': [['1-60']],
 
         # 该issue相关PR的前缀，用来标识PR是否属于该issue
-        'pr_prefix' : "Fix COPY-FROM No.",
-
-        # PR、状态等信息所在的列
-        'pr_col': 3,
-    },{
-        # 任务名称，起标识作用
-        'issue_name': "【Docathon】补充缺失的中文 API 文档",
-
-        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
-        'start_time' : '2023-09-15T00:00:00Z',
-
-        # issue页面 url 地址, 注意结尾不要有斜杠
-        'issue_url': 'https://api.github.com/repos/PaddlePaddle/docs/issues/6193',
-        
-        # 监控的仓库列表
-        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/docs/pulls'],
-
-        # 最大的任务ID
-        'max_task_id' : 67,
-
-        # 忽略不处理的题号，这部分留给人工处理
-        'un_handle_tasks' : [], 
-
-        # 已删除的赛题
-        'removed_tasks' : [],
-
-        # 赛道名
-        'type_names' : ["Docathon"], 
-
-        # 每个赛题所属的赛道，每个赛道是一个数组
-        'task_types' : [['1-67']],
-
-        # 该issue相关PR的前缀，用来标识PR是否属于该issue
-        'pr_prefix' : "Add CN Doc No.",
+        'pr_prefix': "Add API Legend No.",
 
         # PR、状态等信息所在的列
         'pr_col': 4,
     },{
         # 任务名称，起标识作用
-        'issue_name': "【PIR】 PIR下的OP单测修复",
+        'issue_name': "【complex op】paddlepaddle 支持复数",
 
-        # 【PIR】 PIR下的OP单测修复 任务开始时间
-        'start_time' : '2023-11-28T00:00:48Z',
+        # 【complex op】paddlepaddle 支持复数 任务开始时间
+        'start_time' : '2023-08-10T00:00:48Z',
 
         # issue页面 url 地址, 注意结尾不要有斜杠
-        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/59382',
-        
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/61975',
+
         # 监控的仓库列表
         'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls'],
 
         # 最大的任务ID
-        'max_task_id' : 38,
+        'max_task_id' : 55,
 
         # 忽略不处理的题号，这部分留给人工处理
         'un_handle_tasks' : [],   # 已经手动分配出去了
@@ -238,19 +80,362 @@ configs = [
         'removed_tasks' : [],
 
         # 赛道名
-        'type_names' : ["快乐开源"], 
+        'type_names' : ["快乐开源"],
 
         # 每个赛题所属的赛道，每个赛道是一个数组
-        'task_types' : [['1-38']],
-        
+        'task_types' : [['1-55']],
+
         # 该issue相关PR的前缀，用来标识PR是否属于该issue
-        'pr_prefix' : "PIR OpTest Fix No.",
-        
+        'pr_prefix' : "complex op No.",
+
         # PR、状态等信息所在的列
         'pr_col': 3,
-    },
+    }, {
+        # 任务名称，起标识作用
+        'issue_name': "【快乐开源】为 PaddleScience 案例添加 export 和 inference 功能",
+
+        # 【快乐开源】为 PaddleScience 案例添加 export 和 inference 功能
+        'start_time' : '2024-02-26T00:00:48Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/PaddleScience/issues/788',
+
+        # 监控的仓库列表
+        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/PaddleScience/pulls'],
+
+        # 最大的任务ID
+        'max_task_id' : 35,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [],   # 已经手动分配出去了
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["快乐开源"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-35']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "PPSCI Export&Infer No.",
+
+        # PR、状态等信息所在的列
+        'pr_col': 4,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "引入 clang-tidy Tracking Issue",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-04-15T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/64128',
+
+        # 监控的仓库列表
+        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls'],
+
+        # 最大的任务ID
+        'max_task_id' : 299,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [],
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["Fundable Projects No.2"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-299']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "Hackathon 6th Fundable Projects 2 No.",
+
+        # PR、状态等信息所在的列
+        'pr_col': 4,
+
+        # 是否展示看板信息
+        'board': True,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "【Hackathon 7th】开源贡献个人挑战赛（偷跑版）",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-08-21T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/67603',
+
+        # 监控的仓库列表
+        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls',
+                      'https://api.github.com/repos/PaddlePaddle/PaddleScience/pulls',
+                      'https://api.github.com/repos/PaddlePaddle/community/pulls'],
+
+        # 最大的任务ID
+        'max_task_id' : 17,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [1],
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["【个人挑战赛】科学计算"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-17']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "Hackathon 7th PPSCI No.",
+
+        # PR、状态等信息所在的列
+        'pr_col': 4,
+
+        # 是否展示看板信息
+        'board': True,
+
+        # 是否为黑客松任务
+        'hackathon': True,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "第七期飞桨黑客松护航计划集训营（正式批）",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-08-21T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/67601',
+
+        # 监控的仓库列表
+        'repo_urls':  [],
+
+        # 最大的任务ID
+        'max_task_id' : 8,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [],
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["飞桨护航计划集训营（正式批）"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-8']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "",
+
+        # PR、状态等信息所在的列
+        'pr_col': 5,
+
+        # 是否展示看板信息
+        'board': False,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "【Hackathon 7th】开源贡献个人挑战赛",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-09-14T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/68244',
+
+        # 监控的仓库列表
+        'repo_urls':  ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls',
+             'https://api.github.com/repos/PaddlePaddle/community/pulls',
+             'https://api.github.com/repos/PaddlePaddle/PaddleScience/pulls',
+             'https://api.github.com/repos/PaddlePaddle/Paddle2ONNX/pulls',
+             'https://api.github.com/repos/PaddlePaddle/PaddleNLP/pulls',
+             'https://api.github.com/repos/PaddlePaddle/PaddleMIX/pulls',
+             'https://api.github.com/repos/PaddlePaddle/PaddleX/pulls',
+             'https://api.github.com/repos/PaddlePaddle/PaddleOCR/pulls',
+             'https://api.github.com/repos/PaddlePaddle/PaddleSpeech/pulls',
+             'https://api.github.com/repos/PaddlePaddle/PaConvert/pulls',
+             'https://api.github.com/repos/PaddlePaddle/docs/pulls',
+            ],
+
+        # 最大的任务ID
+        'max_task_id' : 58,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : ['1-17'],  # 科学计算题目已经再另一个 issue 发布了
+
+        # 已删除的赛题
+        'removed_tasks' : ['1-17'],
+
+        # 赛道名
+        'type_names' : ["框架 API 开发任务", "套件开发任务"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['18-42'],
+                        ['43-58']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "Hackathon 7th No.",
+
+        # PR、状态等信息所在的列
+        'pr_col': 4,
+
+        # 如果需要标识完成人，需要写上完成人所在的列
+        'complete_col': 5,
+
+        # 是否展示看板信息
+        'board': True,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "【Hackathon 7th】Fundable Projects",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-09-14T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/68245',
+
+        # 监控的仓库列表
+        'repo_urls':  [],
+
+        # 最大的任务ID
+        'max_task_id' : 8,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [],
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["Fundable Projects"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-8']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "Hackathon 7th Fundable Projects No.",
+
+        # PR、状态等信息所在的列
+        'pr_col': 4,
+
+        # 是否展示看板信息
+        'board': False,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "Fundable Projects No.1 修改算子列表",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-09-01T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/68332',
+
+        # 监控的仓库列表
+        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls'],
+
+        # 最大的任务ID
+        'max_task_id' : 105,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [],
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["Fundable Projects No.1"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-105']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "Hackathon 7th Fundable Projects 1 No.",
+
+        # PR、状态等信息所在的列
+        'pr_col': 3,
+
+        # 是否展示看板信息
+        'board': True,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "Fundable Projects No.2 修改算子列表",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-09-01T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/Paddle/issues/68333',
+
+        # 监控的仓库列表
+        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls'],
+
+        # 最大的任务ID
+        'max_task_id' : 115,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [],
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["Fundable Projects No.2"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-115']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "Hackathon 7th Fundable Projects 2 No.",
+
+        # PR、状态等信息所在的列
+        'pr_col': 3,
+
+        # 是否展示看板信息
+        'board': True,
+    },{
+        # 任务名称，起标识作用
+        'issue_name': "开放原子第二届开源大赛：飞桨科学计算工具组件开发大赛",
+
+        # 开始时间，只会统计开始时间之后的PR(注意时间中的字母T和Z不能缺少)
+        'start_time' : '2024-09-25T00:00:00Z',
+
+        # issue页面 url 地址, 注意结尾不要有斜杠
+        'issue_url': 'https://api.github.com/repos/PaddlePaddle/PaddleScience/issues/1000',
+
+        # 监控的仓库列表
+        'repo_urls': ['https://api.github.com/repos/PaddlePaddle/Paddle/pulls',
+                      'https://api.github.com/repos/PaddlePaddle/PaddleScience/pulls',
+                      'https://api.github.com/repos/PaddlePaddle/community/pulls'],
+
+        # 最大的任务ID
+        'max_task_id' : 6,
+
+        # 忽略不处理的题号，这部分留给人工处理
+        'un_handle_tasks' : [],
+
+        # 已删除的赛题
+        'removed_tasks' : [],
+
+        # 赛道名
+        'type_names' : ["飞桨科学计算工具组件开发大赛"],
+
+        # 每个赛题所属的赛道，每个赛道是一个数组
+        'task_types' : [['1-6']],
+
+        # 该issue相关PR的前缀，用来标识PR是否属于该issue
+        'pr_prefix' : "Paddle Toolkit Development Competition",
+
+        # PR、状态等信息所在的列
+        'pr_col': 3,
+
+        # 是否展示看板信息
+        'board': True,
+    }
 ]
-    
+
 
 def get_logger():
     logger = logging.getLogger('logger')
